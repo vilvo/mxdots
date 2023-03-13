@@ -14,10 +14,16 @@
     useExperimentalGPUDriver = true;
   };
 
+  hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
+  sound.enable = true;
+  services.jack.jackd.enable = true;
+  security.rtkit.enable = true;
+
   users.users.vilvo = {
     isNormalUser = true;
     description = "vilvo";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" ];
     packages = with pkgs; [
       firefox
       pulseaudio
