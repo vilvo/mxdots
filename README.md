@@ -4,6 +4,15 @@
 
 Great laptops with Linux. If you do `aarch64` development, native is better than cross-compilation.
 
+## Basic usage
+
+```
+nix flake update
+sudo nixos-rebuild switch --flake .#blub --impure
+```
+
+`--impure` is required because of Apple firmware at `/boot/asahi`
+
 ## Prerequisities
 
 * [Read these instructions](https://github.com/tpwrules/nixos-apple-silicon/blob/main/docs/uefi-standalone.md)

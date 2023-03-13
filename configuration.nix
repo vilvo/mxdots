@@ -1,12 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, apple-silicon, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./apple-silicon-support
-    ];
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.luks.devices."encrypted".device = "/dev/disk/by-uuid/44935802-2deb-431f-9eb2-7205d251040d";
@@ -14,7 +8,8 @@
   networking.hostName = "blub";
   networking.networkmanager.enable = true;
 
-  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
+  # requires --impure with flakes
+  hardware.asahi.peripheralFirmwareDirectory = /boot/asahi;
 
   users.users.vilvo = {
     isNormalUser = true;
