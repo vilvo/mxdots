@@ -8,8 +8,11 @@
   networking.hostName = "blub";
   networking.networkmanager.enable = true;
 
-  # requires --impure with flakes
-  hardware.asahi.peripheralFirmwareDirectory = /boot/asahi;
+  # requires --impure with flakes because of firmware location
+  hardware.asahi = {
+    peripheralFirmwareDirectory = /boot/asahi;
+    useExperimentalGPUDriver = true;
+  };
 
   users.users.vilvo = {
     isNormalUser = true;
