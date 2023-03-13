@@ -53,3 +53,10 @@ Continue the configuration and finish the NixOS Installation. Boot and type your
 * Really. The instructions covers all but encrypting your disk.
 * Really, even if you f your M1 internal NVMe - it covers the recovery with another Apple device.
     * Use idevicerestore and macOS 12.4.
+
+## Thanks
+
+* @tpwrules for [`nixos-apple-silicon`](https://github.com/tpwrules/nixos-apple-silicon)
+* @yusernapora for above with flakes - [blog post worth reading](https://yusef.napora.org/blog/nixos-asahi/)
+
+I only added disk encryption and simplified the flake config with M1 host only.
