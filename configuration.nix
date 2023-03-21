@@ -68,6 +68,22 @@
     wrapperFeatures.gtk = true;
   };
 
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+    };
+    gc = { # Automatic garbage collection
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    extraOptions = ''
+      experimental-features = nix-command flakes ca-derivations
+      keep-outputs          = true
+      keep-derivations      = true
+    '';
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with pkgs; [
