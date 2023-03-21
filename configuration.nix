@@ -28,11 +28,16 @@
       firefox
       pulseaudio
       rustup
-      emacs
       git
-      vscode
+      micro
+      bat
     ];
   };
+
+  environment.interactiveShellInit = ''
+    alias nano='micro'
+    alias cat='bat -A --color always'
+  '';
 
   nixpkgs.config.allowUnfree = true;
 
