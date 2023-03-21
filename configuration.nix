@@ -30,6 +30,7 @@
       rustup
       emacs
       git
+      vscode
     ];
   };
 
