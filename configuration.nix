@@ -28,6 +28,7 @@
       firefox
       pulseaudio
       rustup
+      clang
       git
       micro
       bat
