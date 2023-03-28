@@ -24,9 +24,9 @@
       inherit system;
       specialArgs = { inherit system nixpkgs; };
       modules = [
-	./hardware-configuration.nix
-	apple-silicon.nixosModules.apple-silicon-support
-	./configuration.nix
+        ./hardware-configuration.nix
+        apple-silicon.nixosModules.apple-silicon-support
+        ./configuration.nix
       ];
     };
   };
