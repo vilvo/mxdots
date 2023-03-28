@@ -23,7 +23,7 @@
   users.users.vilvo = {
     isNormalUser = true;
     description = "vilvo";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" "video" ];
     packages = with pkgs; [
       firefox
       pulseaudio
@@ -32,6 +32,8 @@
       git
       micro
       bat
+      gcc
+      nix-index
     ];
   };
 
