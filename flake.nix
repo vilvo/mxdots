@@ -8,9 +8,10 @@
       url = "github:tpwrules/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ self, nixpkgs, apple-silicon, ... } :
+  outputs = inputs@{ self, nixpkgs, apple-silicon, hyprland, ... } :
   let
     system = "aarch64-linux";
     inherit (nixpkgs.lib) nixosSystem;
