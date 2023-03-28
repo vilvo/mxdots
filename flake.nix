@@ -26,6 +26,7 @@
       modules = [
         ./hardware-configuration.nix
         apple-silicon.nixosModules.apple-silicon-support
+        hyprland.nixosModules.default
         ./configuration.nix
       ];
     };

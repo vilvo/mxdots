@@ -1,4 +1,4 @@
-{ config, pkgs, lib, apple-silicon, ... }:
+{ config, pkgs, lib, apple-silicon, hyprland, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -75,6 +75,8 @@
     ];
     wrapperFeatures.gtk = true;
   };
+
+  programs.hyprland.enable = true;
 
   nix = {
     settings = {
