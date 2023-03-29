@@ -54,15 +54,8 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.autorun = false;
-  services.xserver.displayManager.startx.enable = true;
-
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   programs.sway = {
     enable = true;
