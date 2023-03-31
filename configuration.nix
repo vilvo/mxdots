@@ -54,7 +54,8 @@
   };
 
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.autorun = false;
   services.xserver.desktopManager.gnome.enable = true;
 
   programs.sway = {
