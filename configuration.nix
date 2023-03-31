@@ -11,7 +11,7 @@
   # requires --impure with flakes because of firmware location
   hardware.asahi = {
     peripheralFirmwareDirectory = /boot/asahi;
-    useExperimentalGPUDriver = true;
+    useExperimentalGPUDriver = false;
   };
 
   hardware.pulseaudio.enable = true;
