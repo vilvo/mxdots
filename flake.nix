@@ -8,6 +8,7 @@
       url = "github:tpwrules/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
   };
 
   outputs = inputs@{ self, nixpkgs, apple-silicon, ... } :
@@ -22,10 +23,12 @@
     nixosConfigurations."blub" = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit system nixpkgs; };
-      modules = [
-	./hardware-configuration.nix
-	apple-silicon.nixosModules.apple-silicon-support
-	./configuration.nix
+      modules = [({pkgs, ...}: {
+        nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
+        })
+	    ./hardware-configuration.nix
+	    apple-silicon.nixosModules.apple-silicon-support
+	    ./configuration.nix
       ];
     };
   };
