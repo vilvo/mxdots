@@ -35,6 +35,7 @@
       gcc
       nix-index
       htop
+      vscode
     ];
   };
 
