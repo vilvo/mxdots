@@ -37,6 +37,9 @@
       htop
       vscode
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo"
+    ];
   };
 
   environment.interactiveShellInit = ''
@@ -75,6 +78,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      trusted-users = [ "root" "vilvo" ];
     };
     gc = { # Automatic garbage collection
       automatic = true;
@@ -82,9 +86,7 @@
       options = "--delete-older-than 7d";
     };
     extraOptions = ''
-      experimental-features = nix-command flakes ca-derivations
-      keep-outputs          = true
-      keep-derivations      = true
+      experimental-features = nix-command flakes
     '';
   };
 
@@ -93,8 +95,13 @@
      enableSSHSupport = true;
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
 
   system.stateVersion = "23.05";
 
