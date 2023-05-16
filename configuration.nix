@@ -38,7 +38,8 @@
       vscode
     ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo@blip"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO4PwKy7JuxX892B3lGKC6oakJ7QajkZMoGww8MN6ML4 vilvo@blop"
     ];
   };
 
@@ -83,7 +84,7 @@
     gc = { # Automatic garbage collection
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 30d";
     };
     extraOptions = ''
       experimental-features = nix-command flakes
