@@ -29,8 +29,6 @@
       pulseaudio
       rustup
       clang
-      git
-      micro
       bat
       gcc
       nix-index
@@ -103,6 +101,12 @@
       KbdInteractiveAuthentication = false;
     };
   };
+
+  environment.systemPackages = with pkgs;
+  [
+    git
+    clang
+  ];
 
   system.stateVersion = "23.05";
 
