@@ -11,7 +11,7 @@
   # requires --impure with flakes because of firmware location
   hardware.asahi = {
     peripheralFirmwareDirectory = /boot/asahi;
-    useExperimentalGPUDriver = false;
+    useExperimentalGPUDriver = true;
   };
 
   hardware.pulseaudio.enable = true;
@@ -23,7 +23,7 @@
   users.users.vilvo = {
     isNormalUser = true;
     description = "vilvo";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" "video" "input" ];
     packages = with pkgs; [
       firefox
       pulseaudio
@@ -34,6 +34,7 @@
       nix-index
       htop
       vscode
+      micro
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo@blip"
@@ -64,6 +65,7 @@
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
+      waybar
       swaylock
       swayidle
       alacritty
