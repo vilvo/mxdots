@@ -36,6 +36,7 @@
       vscode
       micro
       foot
+      dracut
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo@blip"
@@ -113,4 +114,11 @@
 
   system.stateVersion = "23.05";
 
+  system.activationScripts = {
+  	disableMacStartupChime = {
+  	text = ''
+      printf "\x07\x00\x00\x00\x00" > /sys/firmware/efi/efivars/SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82  	  
+  	'';
+  	};
+  };
 }
