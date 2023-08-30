@@ -21,7 +21,7 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations."blub" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."blib" = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit system nixpkgs; };
       modules = [({pkgs, ...}: {

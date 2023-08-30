@@ -2,10 +2,8 @@
 
 {
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
-  boot.initrd.luks.devices."encrypted".device = "/dev/disk/by-uuid/44935802-2deb-431f-9eb2-7205d251040d";
 
-  networking.hostName = "blub";
+  networking.hostName = "blib";
   networking.networkmanager.enable = true;
 
   # requires --impure with flakes because of firmware location
@@ -40,7 +38,6 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwRelxFwR6WPBm86b52q7pjQd8mEiqj1R3yj6YVL6wM vilvo@blip"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO4PwKy7JuxX892B3lGKC6oakJ7QajkZMoGww8MN6ML4 vilvo@blop"
     ];
   };
 
@@ -112,6 +109,6 @@
     clang
   ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 
 }
