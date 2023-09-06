@@ -23,6 +23,7 @@
     description = "vilvo";
     extraGroups = [ "networkmanager" "wheel" "dialout" "jackaudio" "video" "input" ];
     packages = with pkgs; [
+      pavucontrol
       firefox
       pulseaudio
       rustup
