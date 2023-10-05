@@ -1,3 +1,5 @@
+Archived because dotfiles of apple-silicon hosts are merged to https://github.com/vilvo/dotfiles
+
 # NixOS dotfiles on Apple M1 devices
 
 ## Why
